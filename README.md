@@ -6,7 +6,7 @@ Không cần tài khoản GitHub để chạy cục bộ. Toàn bộ khách hàn
 ## Chạy trên Windows
 
 1. Cài **Python 3.12 64 bit** từ https://www.python.org/downloads/ (nếu chưa có).
-2. Giải nén đầy đủ thư mục `mart-crm`.
+2. Tải `Mart_CRM_Ma_nguon.zip` trong repository này và giải nén thư mục `mart-crm`. Các tệp tại thư mục gốc GitHub là hướng dẫn và bản lưu lịch sử; chạy ứng dụng từ thư mục vừa giải nén.
 3. Chạy `start.bat`. Lần đầu cần Internet để cài các gói từ PyPI.
 4. Mở http://127.0.0.1:8000. Giữ cửa sổ máy chủ mở khi dùng ứng dụng.
 5. Nếu trình duyệt mở trước lúc máy chủ sẵn sàng, tải lại trang.
@@ -18,7 +18,7 @@ Tài khoản **chỉ dùng cho dữ liệu kiểm thử**:
 | admin | MartDemo!2026 | Quản trị |
 | cashier | Cashier!2026 | Thu ngân |
 
-Bản bàn giao có `data/mart.sqlite3` đã chứa giao dịch thật của phiên demo. Khi cơ sở dữ liệu đã có, chương trình seed không ghi đè. Không xóa file để khắc phục lỗi nếu cần giữ dữ liệu.
+Gói mã nguồn công khai không kèm tệp cơ sở dữ liệu demo. Khi khởi động lần đầu, `seed.py` tạo SQLite cục bộ với dữ liệu thực hành. Gói ZIP bàn giao riêng có cơ sở dữ liệu của phiên demo; khi cơ sở dữ liệu đã có, chương trình seed không ghi đè.
 
 Linux/macOS: dùng Python 3.12 rồi chạy `bash start.sh`.
 
@@ -57,12 +57,9 @@ Test tạo SQLite tạm riêng; không làm mất dữ liệu đang sử dụng.
 - `static/`: giao diện gọi API thật; không lưu hồ sơ trong localStorage.
 - `test/`: unit test và API integration test.
 - `docs/diagrams/`: sơ đồ PNG, SVG và mã nguồn DOT có thể sửa.
-- `evidence/screenshots/`: ảnh gốc lấy từ trình duyệt đang chạy ứng dụng.
-- `data/mart.sql`: xuất SQL của đúng CSDL bàn giao.
-- `docs/git-history.txt` và `mart-crm-history.bundle`: lịch sử Git thật, tác giả Codex.
-- `evidence/browser-session.json`: kết quả phiên ảnh ban đầu (10 hóa đơn).
-- `evidence/recording-session.json`: mốc thời gian của video liên tục.
-- `evidence/video-final-database.json`: kết quả sau phiên quay và đúng CSDL bàn giao: 11 hóa đơn, 9 PAID, 2 CANCELLED, 16 dòng sổ điểm, 14 audit; doanh thu 11.830.000 đồng, KH0009 có 33 điểm và tồn gạo 63.
+- Ảnh chụp và nhật ký demo nằm trong gói bàn giao riêng và báo cáo Word.
+- `data/`: thư mục để SQLite được tạo khi chạy lần đầu; dữ liệu của phiên demo được giữ trong gói bàn giao riêng.
+- `docs/git-history.txt`: danh sách lịch sử phát triển gốc. `mart-crm-history.bundle` được cung cấp riêng tại thư mục gốc repository để bảo toàn commit và tác giả.
 
 Tài liệu API tại `/api/docs`; đặc tả OpenAPI gốc tại `/api/openapi.json`. Giao diện Swagger sử dụng CDN, cần Internet; API và giao diện CRM sau cài đặt hoạt động cục bộ.
 
