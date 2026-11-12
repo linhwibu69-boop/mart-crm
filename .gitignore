@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/*.sqlite3*
+evidence/screenshots/
+evidence/*.mp4
+.openai/
+
+# Generated transfer archives
+*.bundle
